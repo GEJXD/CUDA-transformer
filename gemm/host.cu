@@ -1,12 +1,7 @@
 #include <stdlib.h>
 #include "gemm.cu"
 #include "cuda_check.h"
-
-void init_matrix(float* mat, int rows, int cols, float val) {
-    for (int i = 0; i < rows * cols; ++i) {
-        mat[i] = val;
-    }
-}
+#include "common_utils.h"
 
 int main() {
     int m = 8192, k = 8192, n = 8192;

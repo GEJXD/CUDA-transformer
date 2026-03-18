@@ -1,6 +1,9 @@
 # ninja log v7
-1	1117	1773565131820611689	CMakeFiles/transformer_bench.dir/src/main.cu.o	3b9fe2100b226956
-1	1360	1773565131821427436	CMakeFiles/transformer_bench.dir/src/transformer.cu.o	a5e9484a39fefe86
-1	936	1773565131821510997	CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o	9d50be1f5f62b96d
-1628	1662	1773565163881014258	transformer_bench	3d10181d151e725b
-0	1628	1773565162252993784	CMakeFiles/transformer_bench.dir/src/gemm.cu.o	826df280dd80e8d1
+1	990	1773815948168258995	CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o	d24c3d0346b95df3
+0	1710	1773815948167884695	CMakeFiles/transformer_bench.dir/src/transformer.cu.o	6f13a51bff8db8f0
+0	1800	1773815948167950924	CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o	5b90636fe0e51ed1
+0	1853	1773815948168104924	CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o	f98bc8e688f6fdfa
+0	1922	1773815948166226941	CMakeFiles/transformer_bench.dir/src/main.cu.o	d8de0a0279506329
+1	2001	1773815948168339934	CMakeFiles/transformer_bench.dir/src/gemm.cu.o	92bad35e39901d35
+1	2154	1773815948168193740	CMakeFiles/transformer_bench.dir/src/block_common.cu.o	b18c6bcc2e77e0aa
+2154	2197	1773815950320253812	transformer_bench	c5101c9a97be799

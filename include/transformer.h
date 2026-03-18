@@ -1,68 +1,50 @@
 #pragma once
 
+#include "decoder_block.h"
+#include "encoder_block.h"
+
 #include <cuda_runtime.h>
 
 struct TransformerConfig {
-    int seq_len;
+    Precision precision;
+    int batch_size;
+    int src_seq_len;
+    int tgt_seq_len;
     int hidden_size;
     int num_heads;
     int ffn_size;
+    int num_encoder_layers;
+    int num_decoder_layers;
     float layernorm_eps;
 };
 
-class TransformerBlock {
+class Transformer {
 public:
-    explicit TransformerBlock(const TransformerConfig& cfg);
-    ~TransformerBlock();
+    explicit Transformer(const TransformerConfig& cfg);
+    ~Transformer();
 
-    TransformerBlock(const TransformerBlock&) = delete;
-    TransformerBlock& operator=(const TransformerBlock&) = delete;
+    Transformer(const Transformer&) = delete;
+    Transformer& operator=(const Transformer&) = delete;
 
-    void forward(const float* d_input, float* d_output, cudaStream_t stream = nullptr);
+    void forward(
+        const float* d_encoder_input,
+        const float* d_decoder_input,
+        float* d_output,
+        cudaStream_t stream = nullptr);
 
 private:
-    void init_weights();
     void allocate_workspace();
-    void free_weights();
     void free_workspace();
 
     TransformerConfig cfg_{};
-    int head_dim_ = 0;
+    EncoderBlockConfig encoder_block_cfg_{};
+    DecoderBlockConfig decoder_block_cfg_{};
 
-    float* w_q_ = nullptr;
-    float* w_k_ = nullptr;
-    float* w_v_ = nullptr;
-    float* w_o_ = nullptr;
-    float* b_q_ = nullptr;
-    float* b_k_ = nullptr;
-    float* b_v_ = nullptr;
-    float* b_o_ = nullptr;
+    EncoderBlock** encoder_layers_ = nullptr;
+    DecoderBlock** decoder_layers_ = nullptr;
 
-    float* ln1_gamma_ = nullptr;
-    float* ln1_beta_ = nullptr;
-    float* ln2_gamma_ = nullptr;
-    float* ln2_beta_ = nullptr;
-
-    float* w1_ = nullptr;
-    float* b1_ = nullptr;
-    float* w2_ = nullptr;
-    float* b2_ = nullptr;
-
-    float* x_norm_ = nullptr;
-    float* q_ = nullptr;
-    float* k_ = nullptr;
-    float* v_ = nullptr;
-
-    float* q_heads_ = nullptr;
-    float* k_heads_ = nullptr;
-    float* v_heads_ = nullptr;
-    float* k_heads_t_ = nullptr;
-    float* scores_ = nullptr;
-    float* ctx_heads_ = nullptr;
-
-    float* ctx_ = nullptr;
-    float* attn_out_ = nullptr;
-    float* residual_ = nullptr;
-    float* ffn_hidden_ = nullptr;
-    float* ffn_out_ = nullptr;
+    float* enc_buffer_a_ = nullptr;
+    float* enc_buffer_b_ = nullptr;
+    float* dec_buffer_a_ = nullptr;
+    float* dec_buffer_b_ = nullptr;
 };

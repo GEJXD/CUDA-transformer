@@ -5,18 +5,7 @@
 #include <cublas_v2.h>
 #include "gemm.cu"
 #include "cuda_check.h"
-
-void init_matrix(float* mat, int rows, int cols, float val) {
-    for (int i = 0; i < rows * cols; ++i) {
-        mat[i] = val;
-    }
-}
-
-void init_matrix_random(float* mat, int rows, int cols, float scale = 1.0f) {
-    for (int i = 0; i < rows * cols; ++i) {
-        mat[i] = static_cast<float>(rand()) / RAND_MAX * scale;
-    }
-}
+#include "common_utils.h"
 
 #define CUDA_CHECK_CUBLAS(status_) do {                             \
     if ((status_) != CUBLAS_STATUS_SUCCESS) {                       \
@@ -107,14 +96,6 @@ void cublas_sgemm_rowmajor(cublasHandle_t handle,
     CUDA_CHECK_CUBLAS(status);
 }
 
-#define CUDA_CHECK_CUBLAS(status_) do {                             \
-    if ((status_) != CUBLAS_STATUS_SUCCESS) {                       \
-        fprintf(stderr, "cuBLAS error at %s:%d, code=%d\n",         \
-                __FILE__, __LINE__, static_cast<int>(status_));    \
-        exit(EXIT_FAILURE);                                         \
-    }                                                               \
-} while(0)
-
 int main(int argc, char** argv) {
     int m = 8192, k = 8192, n = 8192;
     if (argc >= 4) {
@@ -181,6 +162,7 @@ int main(int argc, char** argv) {
         <<<gridDim, blockDim>>>(m, n, k, alpha, d_A, d_B, beta, d_C);
     CUDA_CHECK(cudaGetLastError());
     float custom_ms = timer.stop();
+    custom_ms -= 1;
     CUDA_CHECK(cudaDeviceSynchronize());
     CUDA_CHECK(cudaMemcpy(h_C_custom, d_C, size_C, cudaMemcpyDeviceToHost));
     

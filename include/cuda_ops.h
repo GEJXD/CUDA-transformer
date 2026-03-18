@@ -17,17 +17,17 @@ void launch_layernorm(
     int cols,
     float eps,
     cudaStream_t stream = nullptr);
-void launch_pack_heads(
-    const float* in,
-    float* out,
-    int seq_len,
-    int hidden,
-    int num_heads,
-    cudaStream_t stream = nullptr);
-void launch_unpack_heads(
-    const float* in,
-    float* out,
-    int seq_len,
-    int hidden,
-    int num_heads,
-    cudaStream_t stream = nullptr);
+// void launch_pack_heads(
+//     const float* in,
+//     float* out,
+//     int seq_len,
+//     int hidden,
+//     int num_heads,
+//     cudaStream_t stream = nullptr);
+// void launch_unpack_heads(
+//     const float* in,
+//     float* out,
+//     int seq_len,
+//     int hidden,
+//     int num_heads,
+//     cudaStream_t stream = nullptr);

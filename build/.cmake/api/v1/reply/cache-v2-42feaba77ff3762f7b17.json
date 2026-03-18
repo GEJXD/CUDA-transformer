@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/hsin/repo/infinitensor/transformer/build"
+			"value" : "/home/hsin/repo/transformer/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -251,7 +251,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang++"
+			"value" : "/usr/bin/g++"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -263,27 +263,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "LLVM archiver"
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "CMAKE_CXX_COMPILER_AR-NOTFOUND"
-		},
-		{
-			"name" : "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "`clang-scan-deps` dependency scanner"
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang-scan-deps"
+			"value" : "/usr/bin/gcc-ar"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -295,11 +279,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Generate index for LLVM archive"
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "CMAKE_CXX_COMPILER_RANLIB-NOTFOUND"
+			"value" : "/usr/bin/gcc-ranlib"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -391,7 +375,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/clang"
+			"value" : "/usr/bin/gcc"
 		},
 		{
 			"name" : "CMAKE_DLLTOOL",
@@ -534,10 +518,6 @@
 			"properties" : 
 			[
 				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
 					"name" : "HELPSTRING",
 					"value" : "No help, variable specified on the command line."
 				}
@@ -567,7 +547,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/hsin/repo/infinitensor/transformer/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/hsin/repo/transformer/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -627,7 +607,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/hsin/repo/infinitensor/transformer"
+			"value" : "/home/hsin/repo/transformer"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -667,7 +647,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/ld.lld"
+			"value" : "/usr/bin/ld"
 		},
 		{
 			"name" : "CMAKE_LIST_FILE_NAME",
@@ -1215,7 +1195,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/hsin/repo/infinitensor/transformer/build"
+			"value" : "/home/hsin/repo/transformer/build"
 		},
 		{
 			"name" : "transformer_cuda_IS_TOP_LEVEL",
@@ -1239,7 +1219,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/hsin/repo/infinitensor/transformer"
+			"value" : "/home/hsin/repo/transformer"
 		}
 	],
 	"kind" : "cache",

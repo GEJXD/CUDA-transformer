@@ -1,26 +1,44 @@
 [
 {
-  "directory": "/home/hsin/repo/infinitensor/transformer/build",
-  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/infinitensor/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/infinitensor/transformer/src/main.cu -o CMakeFiles/transformer_bench.dir/src/main.cu.o",
-  "file": "/home/hsin/repo/infinitensor/transformer/src/main.cu",
-  "output": "/home/hsin/repo/infinitensor/transformer/build/CMakeFiles/transformer_bench.dir/src/main.cu.o"
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/main.cu -o CMakeFiles/transformer_bench.dir/src/main.cu.o",
+  "file": "/home/hsin/repo/transformer/src/main.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/main.cu.o"
 },
 {
-  "directory": "/home/hsin/repo/infinitensor/transformer/build",
-  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/infinitensor/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/infinitensor/transformer/src/transformer.cu -o CMakeFiles/transformer_bench.dir/src/transformer.cu.o",
-  "file": "/home/hsin/repo/infinitensor/transformer/src/transformer.cu",
-  "output": "/home/hsin/repo/infinitensor/transformer/build/CMakeFiles/transformer_bench.dir/src/transformer.cu.o"
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/transformer.cu -o CMakeFiles/transformer_bench.dir/src/transformer.cu.o",
+  "file": "/home/hsin/repo/transformer/src/transformer.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/transformer.cu.o"
 },
 {
-  "directory": "/home/hsin/repo/infinitensor/transformer/build",
-  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/infinitensor/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/infinitensor/transformer/src/cuda_ops.cu -o CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o",
-  "file": "/home/hsin/repo/infinitensor/transformer/src/cuda_ops.cu",
-  "output": "/home/hsin/repo/infinitensor/transformer/build/CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o"
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/encoder_block.cu -o CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o",
+  "file": "/home/hsin/repo/transformer/src/encoder_block.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o"
 },
 {
-  "directory": "/home/hsin/repo/infinitensor/transformer/build",
-  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/infinitensor/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/infinitensor/transformer/src/gemm.cu -o CMakeFiles/transformer_bench.dir/src/gemm.cu.o",
-  "file": "/home/hsin/repo/infinitensor/transformer/src/gemm.cu",
-  "output": "/home/hsin/repo/infinitensor/transformer/build/CMakeFiles/transformer_bench.dir/src/gemm.cu.o"
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/decoder_block.cu -o CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o",
+  "file": "/home/hsin/repo/transformer/src/decoder_block.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o"
+},
+{
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/block_common.cu -o CMakeFiles/transformer_bench.dir/src/block_common.cu.o",
+  "file": "/home/hsin/repo/transformer/src/block_common.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/block_common.cu.o"
+},
+{
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/cuda_ops.cu -o CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o",
+  "file": "/home/hsin/repo/transformer/src/cuda_ops.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o"
+},
+{
+  "directory": "/home/hsin/repo/transformer/build",
+  "command": "/opt/cuda/bin/nvcc -forward-unknown-to-host-compiler -I/home/hsin/repo/transformer/include -g -std=c++17 \"--generate-code=arch=compute_86,code=[compute_86,sm_86]\" -O3 --use_fast_math --expt-relaxed-constexpr -x cu -c /home/hsin/repo/transformer/src/gemm.cu -o CMakeFiles/transformer_bench.dir/src/gemm.cu.o",
+  "file": "/home/hsin/repo/transformer/src/gemm.cu",
+  "output": "/home/hsin/repo/transformer/build/CMakeFiles/transformer_bench.dir/src/gemm.cu.o"
 }
 ]

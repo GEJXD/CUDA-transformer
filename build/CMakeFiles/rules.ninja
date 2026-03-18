@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/hsin/repo/infinitensor/transformer -B/home/hsin/repo/infinitensor/transformer/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/hsin/repo/transformer -B/home/hsin/repo/transformer/build
   description = Re-running CMake...
   generator = 1
 

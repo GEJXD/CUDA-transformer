@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/hsin/repo/infinitensor/transformer/build/
+cmake_ninja_workdir = /home/hsin/repo/transformer/build/
 # =============================================================================
 # Object build statements for EXECUTABLE target transformer_bench
 
@@ -49,38 +49,65 @@ cmake_ninja_workdir = /home/hsin/repo/infinitensor/transformer/build/
 
 build cmake_object_order_depends_target_transformer_bench: phony || .
 
-build CMakeFiles/transformer_bench.dir/src/main.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/infinitensor/transformer/src/main.cu || cmake_object_order_depends_target_transformer_bench
+build CMakeFiles/transformer_bench.dir/src/main.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/main.cu || cmake_object_order_depends_target_transformer_bench
   CONFIG = Debug
   DEP_FILE = CMakeFiles/transformer_bench.dir/src/main.cu.o.d
   FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
-  INCLUDES = -I/home/hsin/repo/infinitensor/transformer/include
+  INCLUDES = -I/home/hsin/repo/transformer/include
   OBJECT_DIR = CMakeFiles/transformer_bench.dir
   OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
 
-build CMakeFiles/transformer_bench.dir/src/transformer.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/infinitensor/transformer/src/transformer.cu || cmake_object_order_depends_target_transformer_bench
+build CMakeFiles/transformer_bench.dir/src/transformer.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/transformer.cu || cmake_object_order_depends_target_transformer_bench
   CONFIG = Debug
   DEP_FILE = CMakeFiles/transformer_bench.dir/src/transformer.cu.o.d
   FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
-  INCLUDES = -I/home/hsin/repo/infinitensor/transformer/include
+  INCLUDES = -I/home/hsin/repo/transformer/include
   OBJECT_DIR = CMakeFiles/transformer_bench.dir
   OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
 
-build CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/infinitensor/transformer/src/cuda_ops.cu || cmake_object_order_depends_target_transformer_bench
+build CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/encoder_block.cu || cmake_object_order_depends_target_transformer_bench
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o.d
+  FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
+  INCLUDES = -I/home/hsin/repo/transformer/include
+  OBJECT_DIR = CMakeFiles/transformer_bench.dir
+  OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
+
+build CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/decoder_block.cu || cmake_object_order_depends_target_transformer_bench
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o.d
+  FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
+  INCLUDES = -I/home/hsin/repo/transformer/include
+  OBJECT_DIR = CMakeFiles/transformer_bench.dir
+  OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
+
+build CMakeFiles/transformer_bench.dir/src/block_common.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/block_common.cu || cmake_object_order_depends_target_transformer_bench
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles/transformer_bench.dir/src/block_common.cu.o.d
+  FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
+  INCLUDES = -I/home/hsin/repo/transformer/include
+  OBJECT_DIR = CMakeFiles/transformer_bench.dir
+  OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
+  TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
+
+build CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/cuda_ops.cu || cmake_object_order_depends_target_transformer_bench
   CONFIG = Debug
   DEP_FILE = CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o.d
   FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
-  INCLUDES = -I/home/hsin/repo/infinitensor/transformer/include
+  INCLUDES = -I/home/hsin/repo/transformer/include
   OBJECT_DIR = CMakeFiles/transformer_bench.dir
   OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
 
-build CMakeFiles/transformer_bench.dir/src/gemm.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/infinitensor/transformer/src/gemm.cu || cmake_object_order_depends_target_transformer_bench
+build CMakeFiles/transformer_bench.dir/src/gemm.cu.o: CUDA_COMPILER__transformer_bench_unscanned_Debug /home/hsin/repo/transformer/src/gemm.cu || cmake_object_order_depends_target_transformer_bench
   CONFIG = Debug
   DEP_FILE = CMakeFiles/transformer_bench.dir/src/gemm.cu.o.d
   FLAGS = -g -std=c++17 "--generate-code=arch=compute_86,code=[compute_86,sm_86]" -O3 --use_fast_math --expt-relaxed-constexpr
-  INCLUDES = -I/home/hsin/repo/infinitensor/transformer/include
+  INCLUDES = -I/home/hsin/repo/transformer/include
   OBJECT_DIR = CMakeFiles/transformer_bench.dir
   OBJECT_FILE_DIR = CMakeFiles/transformer_bench.dir/src
   TARGET_SUPPORT_DIR = CMakeFiles/transformer_bench.dir
@@ -93,10 +120,10 @@ build CMakeFiles/transformer_bench.dir/src/gemm.cu.o: CUDA_COMPILER__transformer
 #############################################
 # Link the executable transformer_bench
 
-build transformer_bench: CUDA_EXECUTABLE_LINKER__transformer_bench_Debug CMakeFiles/transformer_bench.dir/src/main.cu.o CMakeFiles/transformer_bench.dir/src/transformer.cu.o CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o CMakeFiles/transformer_bench.dir/src/gemm.cu.o
+build transformer_bench: CUDA_EXECUTABLE_LINKER__transformer_bench_Debug CMakeFiles/transformer_bench.dir/src/main.cu.o CMakeFiles/transformer_bench.dir/src/transformer.cu.o CMakeFiles/transformer_bench.dir/src/encoder_block.cu.o CMakeFiles/transformer_bench.dir/src/decoder_block.cu.o CMakeFiles/transformer_bench.dir/src/block_common.cu.o CMakeFiles/transformer_bench.dir/src/cuda_ops.cu.o CMakeFiles/transformer_bench.dir/src/gemm.cu.o
   CONFIG = Debug
   FLAGS = -g "--generate-code=arch=compute_86,code=[compute_86,sm_86]"
-  LINK_LIBRARIES = -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl
+  LINK_LIBRARIES = -lcublas  -lcudadevrt  -lcudart_static  -lrt  -lpthread  -ldl
   OBJECT_DIR = CMakeFiles/transformer_bench.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -109,7 +136,7 @@ build transformer_bench: CUDA_EXECUTABLE_LINKER__transformer_bench_Debug CMakeFi
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/hsin/repo/infinitensor/transformer/build && /usr/bin/ccmake -S/home/hsin/repo/infinitensor/transformer -B/home/hsin/repo/infinitensor/transformer/build
+  COMMAND = cd /home/hsin/repo/transformer/build && /usr/bin/ccmake -S/home/hsin/repo/transformer -B/home/hsin/repo/transformer/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -121,7 +148,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/hsin/repo/infinitensor/transformer/build && /usr/bin/cmake --regenerate-during-build -S/home/hsin/repo/infinitensor/transformer -B/home/hsin/repo/infinitensor/transformer/build
+  COMMAND = cd /home/hsin/repo/transformer/build && /usr/bin/cmake --regenerate-during-build -S/home/hsin/repo/transformer -B/home/hsin/repo/transformer/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -137,7 +164,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: /home/hsin/repo/infinitensor/transformer/build
+# Folder: /home/hsin/repo/transformer/build
 
 build all: phony transformer_bench
 
@@ -148,14 +175,14 @@ build all: phony transformer_bench
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja /home/hsin/repo/infinitensor/transformer/build/cmake_install.cmake: RERUN_CMAKE | /home/hsin/repo/infinitensor/transformer/CMakeLists.txt /usr/share/cmake/Modules/CMakeCUDAInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Compiler/NVIDIA.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux-NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.3/CMakeCUDACompiler.cmake CMakeFiles/4.2.3/CMakeCXXCompiler.cmake CMakeFiles/4.2.3/CMakeSystem.cmake
+build build.ninja /home/hsin/repo/transformer/build/cmake_install.cmake: RERUN_CMAKE | /home/hsin/repo/transformer/CMakeLists.txt /usr/share/cmake/Modules/CMakeCUDAInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Compiler/NVIDIA.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux-NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.3/CMakeCUDACompiler.cmake CMakeFiles/4.2.3/CMakeCXXCompiler.cmake CMakeFiles/4.2.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/hsin/repo/infinitensor/transformer/CMakeLists.txt /usr/share/cmake/Modules/CMakeCUDAInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake/Modules/Compiler/Clang.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Compiler/NVIDIA.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux-NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.3/CMakeCUDACompiler.cmake CMakeFiles/4.2.3/CMakeCXXCompiler.cmake CMakeFiles/4.2.3/CMakeSystem.cmake: phony
+build /home/hsin/repo/transformer/CMakeLists.txt /usr/share/cmake/Modules/CMakeCUDAInformation.cmake /usr/share/cmake/Modules/CMakeCXXInformation.cmake /usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake/Modules/CMakeGenericSystem.cmake /usr/share/cmake/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake/Modules/CMakeLanguageInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake/Modules/Compiler/GNU.cmake /usr/share/cmake/Modules/Compiler/NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Compiler/NVIDIA.cmake /usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake /usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake /usr/share/cmake/Modules/Linker/GNU-CXX.cmake /usr/share/cmake/Modules/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/GNU.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linker/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake/Modules/Platform/Linux-GNU.cmake /usr/share/cmake/Modules/Platform/Linux-Initialize.cmake /usr/share/cmake/Modules/Platform/Linux-NVIDIA-CUDA.cmake /usr/share/cmake/Modules/Platform/Linux.cmake /usr/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.2.3/CMakeCUDACompiler.cmake CMakeFiles/4.2.3/CMakeCXXCompiler.cmake CMakeFiles/4.2.3/CMakeSystem.cmake: phony
 
 
 #############################################

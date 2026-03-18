@@ -15,7 +15,7 @@ BENCH_TARGET = gemm_benchmark
 HOST_TARGET = gemm_host
 
 # Header dependencies (shared by both targets)
-HEADERS = gemm.cu cuda_check.h
+HEADERS = gemm.cu cuda_check.h common_utils.h
 
 .PHONY: all clean run bench host run-large run-small
 

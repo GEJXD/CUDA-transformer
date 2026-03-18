@@ -1,0 +1,1 @@
+/usr/bin/g++ -Wl,--dependency-file=CMakeFiles/transformer_bench.dir/link.d @CMakeFiles/transformer_bench.dir/objects1.rsp -o transformer_bench @CMakeFiles/transformer_bench.dir/linkLibs.rsp -L"/opt/cuda/targets/x86_64-linux/lib/stubs" -L"/opt/cuda/targets/x86_64-linux/lib"

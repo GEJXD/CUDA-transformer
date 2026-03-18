@@ -50,7 +50,7 @@
 		{
 			"compiler" : 
 			{
-				"id" : "Clang",
+				"id" : "GNU",
 				"implicit" : 
 				{
 					"includeDirectories" : 
@@ -58,17 +58,16 @@
 						"/usr/include/c++/15.2.1",
 						"/usr/include/c++/15.2.1/x86_64-pc-linux-gnu",
 						"/usr/include/c++/15.2.1/backward",
-						"/usr/lib/clang/22/include",
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include",
 						"/usr/local/include",
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include-fixed",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1",
-						"/usr/lib64",
-						"/lib64",
-						"/lib",
-						"/usr/lib"
+						"/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1",
+						"/usr/lib",
+						"/lib"
 					],
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : 
@@ -82,8 +81,8 @@
 						"gcc"
 					]
 				},
-				"path" : "/usr/bin/clang++",
-				"version" : "22.1.1"
+				"path" : "/usr/bin/g++",
+				"version" : "15.2.1"
 			},
 			"language" : "CXX",
 			"sourceFileExtensions" : 

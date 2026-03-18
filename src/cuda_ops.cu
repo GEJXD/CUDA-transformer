@@ -83,6 +83,8 @@ __global__ void transpose_kernel(const float* in, float* out, int rows, int cols
     }
 }
 
+// safe softmax:
+// Softmax(x) = e^xi - max(x) / Sum(x - max(x));
 __global__ void softmax_rows_kernel(float* x, int rows, int cols) {
     __shared__ float shared_max[32];
     __shared__ float shared_sum[32];
@@ -141,6 +143,7 @@ __global__ void softmax_rows_kernel(float* x, int rows, int cols) {
         }
     }
     __syncthreads();
+    // avoid block_sum is zero
     block_sum = shared_sum[0] + 1e-6f;
 
     for (int col = tid; col < cols; col += blockDim.x) {
@@ -148,6 +151,8 @@ __global__ void softmax_rows_kernel(float* x, int rows, int cols) {
     }
 }
 
+// LayerNorm with Affine Transformer
+// y = x * gamma + beta
 __global__ void layernorm_kernel(
     const float* x,
     const float* gamma,
@@ -211,47 +216,47 @@ __global__ void layernorm_kernel(
     }
 }
 
-__global__ void pack_heads_kernel(
-    const float* in,
-    float* out,
-    int seq_len,
-    int hidden,
-    int num_heads,
-    int head_dim) {
-    const int idx = blockIdx.x * blockDim.x + threadIdx.x;
-    const int total = seq_len * hidden;
-    if (idx >= total) {
-        return;
-    }
-
-    const int token = idx / hidden;
-    const int h = idx % hidden;
-    const int head = h / head_dim;
-    const int dim = h % head_dim;
-
-    out[(head * seq_len + token) * head_dim + dim] = in[idx];
-}
-
-__global__ void unpack_heads_kernel(
-    const float* in,
-    float* out,
-    int seq_len,
-    int hidden,
-    int num_heads,
-    int head_dim) {
-    const int idx = blockIdx.x * blockDim.x + threadIdx.x;
-    const int total = seq_len * hidden;
-    if (idx >= total) {
-        return;
-    }
-
-    const int token = idx / hidden;
-    const int h = idx % hidden;
-    const int head = h / head_dim;
-    const int dim = h % head_dim;
-
-    out[idx] = in[(head * seq_len + token) * head_dim + dim];
-}
+// __global__ void pack_heads_kernel(
+//     const float* in,
+//     float* out,
+//     int seq_len,
+//     int hidden,
+//     int num_heads,
+//     int head_dim) {
+//     const int idx = blockIdx.x * blockDim.x + threadIdx.x;
+//     const int total = seq_len * hidden;
+//     if (idx >= total) {
+//         return;
+//     }
+//
+//     const int token = idx / hidden;
+//     const int h = idx % hidden;
+//     const int head = h / head_dim;
+//     const int dim = h % head_dim;
+//
+//     out[(head * seq_len + token) * head_dim + dim] = in[idx];
+// }
+//
+// __global__ void unpack_heads_kernel(
+//     const float* in,
+//     float* out,
+//     int seq_len,
+//     int hidden,
+//     int num_heads,
+//     int head_dim) {
+//     const int idx = blockIdx.x * blockDim.x + threadIdx.x;
+//     const int total = seq_len * hidden;
+//     if (idx >= total) {
+//         return;
+//     }
+//
+//     const int token = idx / hidden;
+//     const int h = idx % hidden;
+//     const int head = h / head_dim;
+//     const int dim = h % head_dim;
+//
+//     out[idx] = in[(head * seq_len + token) * head_dim + dim];
+// }
 
 }  // namespace
 
@@ -298,18 +303,18 @@ void launch_layernorm(
     layernorm_kernel<<<rows, kThreads, 0, stream>>>(x, gamma, beta, y, rows, cols, eps);
 }
 
-void launch_pack_heads(const float* in, float* out, int seq_len, int hidden, int num_heads, cudaStream_t stream) {
-    assert(hidden % num_heads == 0);
-    const int total = seq_len * hidden;
-    const int blocks = (total + kThreads - 1) / kThreads;
-    const int head_dim = hidden / num_heads;
-    pack_heads_kernel<<<blocks, kThreads, 0, stream>>>(in, out, seq_len, hidden, num_heads, head_dim);
-}
-
-void launch_unpack_heads(const float* in, float* out, int seq_len, int hidden, int num_heads, cudaStream_t stream) {
-    assert(hidden % num_heads == 0);
-    const int total = seq_len * hidden;
-    const int blocks = (total + kThreads - 1) / kThreads;
-    const int head_dim = hidden / num_heads;
-    unpack_heads_kernel<<<blocks, kThreads, 0, stream>>>(in, out, seq_len, hidden, num_heads, head_dim);
-}
+// void launch_pack_heads(const float* in, float* out, int seq_len, int hidden, int num_heads, cudaStream_t stream) {
+//     assert(hidden % num_heads == 0);
+//     const int total = seq_len * hidden;
+//     const int blocks = (total + kThreads - 1) / kThreads;
+//     const int head_dim = hidden / num_heads;
+//     pack_heads_kernel<<<blocks, kThreads, 0, stream>>>(in, out, seq_len, hidden, num_heads, head_dim);
+// }
+//
+// void launch_unpack_heads(const float* in, float* out, int seq_len, int hidden, int num_heads, cudaStream_t stream) {
+//     assert(hidden % num_heads == 0);
+//     const int total = seq_len * hidden;
+//     const int blocks = (total + kThreads - 1) / kThreads;
+//     const int head_dim = hidden / num_heads;
+//     unpack_heads_kernel<<<blocks, kThreads, 0, stream>>>(in, out, seq_len, hidden, num_heads, head_dim);
+// }
