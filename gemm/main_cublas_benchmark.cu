@@ -162,7 +162,6 @@ int main(int argc, char** argv) {
         <<<gridDim, blockDim>>>(m, n, k, alpha, d_A, d_B, beta, d_C);
     CUDA_CHECK(cudaGetLastError());
     float custom_ms = timer.stop();
-    custom_ms -= 1;
     CUDA_CHECK(cudaDeviceSynchronize());
     CUDA_CHECK(cudaMemcpy(h_C_custom, d_C, size_C, cudaMemcpyDeviceToHost));
     
